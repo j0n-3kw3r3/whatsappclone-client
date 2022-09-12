@@ -9,10 +9,10 @@ export function useSocket() {
 
 export function SocketProvider({ id, children }) {
     const [socket, setSocket] = useState();
-    const ENDPOINT = 'https://whatsappcloneapp.herokuapp.com/'
     
     useEffect(() => {
         return () => {
+            const ENDPOINT = 'https://whatsappcloneapp.herokuapp.com/'
             const newSocket = io( ENDPOINT,
                 { query: { id } }
             )
